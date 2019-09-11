@@ -42,8 +42,8 @@
         let raycaster = new THREE.Raycaster();
         let mouse = new THREE.Vector2();
 
-        let geometry = new THREE.BoxGeometry(1, 1, 1);
-        let material = new THREE.MeshLambertMaterial({ color: 0xF7F7F7 });
+        var geometry = new THREE.BoxGeometry(1, 1, 1);
+        var material = new THREE.MeshLambertMaterial({ color: 0xF7F7F7 });
         // let mesh = new THREE.Mesh(geometry, material);
 
         // scene.add(mesh);
@@ -51,16 +51,20 @@
         meshX = -10;
         for(let i =0;i<15;i++){
             let mesh = new THREE.Mesh(geometry,material)
-            mesh.position.x =(Math.random()- 0.5) *10
-            mesh.position.y =(Math.random()- 0.5) *10
-            mesh.position.z =(Math.random()- 0.5) *10
+            mesh.position.x =(Math.random()- 0.5) *10;
+            mesh.position.y =(Math.random()- 0.5) *10;
+            mesh.position.z =(Math.random()- 0.5) *10;
             scene.add(mesh)
             meshX+=1
         }
 
-        let light = new THREE.PointLight(0xFFFFFF, 1, 500);
+        var light = new THREE.PointLight(0xFFFFFF, 1, 500);
         light.position.set(10, 0, 25);
 
+        scene.add(light)
+
+        var light = new THREE.PointLight(0xFFFFFF, 1, 500);
+        light.position.set(0, 0, 25);
         scene.add(light)
 
         let render = () => {
